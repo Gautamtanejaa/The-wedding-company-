@@ -252,5 +252,7 @@ For an assignment and for small-to-medium scale:
   - Indexes on frequently queried fields (e.g. `organizations.slug`, `admins.email`).
   - Input rate-limiting and stronger security around JWT secrets and key rotation.
 
+<img width="732" height="759" alt="image" src="https://github.com/user-attachments/assets/d21a0ab4-7f98-4703-bbb8-8a6c8e58fbf7" />
+
 
 
