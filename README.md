@@ -186,21 +186,6 @@ The API will be available at `http://localhost:8000` and the automatic docs at:
 - For each organization with slug `acme_corp`, a collection `org_acme_corp` is created.
 - Initially empty (you can later store org-specific entities like members, projects, etc.).
 
-### Simple Diagram
-
-```text
-Client
-  |
-  v
-FastAPI (app.main:app)
-  |
-  +--> /admin/login  -----> admins (master)
-  |
-  +--> /org/*  --------+--> organizations (master)
-                       \
-                        +--> org_<slug> (per-organization collection)
-```
-
 ## Design Choices & Trade-offs
 
 ### Is this architecture scalable?
@@ -252,7 +237,9 @@ For an assignment and for small-to-medium scale:
   - Indexes on frequently queried fields (e.g. `organizations.slug`, `admins.email`).
   - Input rate-limiting and stronger security around JWT secrets and key rotation.
 
+ ## Simple Diagram
 <img width="732" height="759" alt="image" src="https://github.com/user-attachments/assets/d21a0ab4-7f98-4703-bbb8-8a6c8e58fbf7" />
+
 
 
 
